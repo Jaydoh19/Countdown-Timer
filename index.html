@@ -4,8 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Countdown Timer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
 </head>
 <body>
-  
+  <div class="timer-container">
+    <p class="countdown" id="countdown">0:00</p>
+    <div class="time-intervals">
+      <button class="interval"><span>15s</span></button>
+      <button class="interval"><span>30s</span></button>
+      <button class="interval"><span>1m</span></button>
+      <button class="interval"><span>5m</span></button>
+      <button class="interval"><span>15m</span></button>
+      <button class="interval"><span>30m</span></button>
+      <button class="interval-reset"><span>Reset</span></button>
+    </div>
+    <div class="timer-functions">
+      <button class="reset-btn">Reset</button>
+      <button class="start-btn">Start</button>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,89 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(135deg,rgb(80, 80, 80),rgb(43, 43, 43));
+  min-height: 100vh;
+}
+
+span{
+  font-family: "Poppins", sans-serif;
+}
+
+button{
+  font-family: "Poppins", sans-serif;
+}
+
+.timer-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  gap: 30px;
+  padding: 10px;
+  width: 50rem;
+  height: 25rem;
+  background: linear-gradient(135deg, white, darkgray);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.time-intervals{
+  gap: 35px;
+}
+
+.countdown{
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.interval{
+  font-size: 1.5rem;
+  border: none;
+  font-weight: 600;
+  border-radius: 1rem;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.interval span {
+  color: rgb(112, 184, 112);
+}
+
+.interval-reset{
+  font-size: 1.5rem;
+  border: none;
+  font-weight: 600;
+  border-radius: 1rem;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.interval-reset span{
+  color: rgb(228, 56, 56);
+}
+
+.reset-btn, .start-btn{
+  font-size: 1.5rem;
+  border: none;
+  font-weight: 600;
+  border-radius: 1rem;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.interval, .interval-reset, .reset-btn, .start-btn{
+  transition: all 0.2s ease;
+}
+
+.interval:hover, .interval-reset:hover, .reset-btn:hover, .start-btn:hover{
+  transform: scale(1.1);
+}
