@@ -8,64 +8,91 @@ let time = {
 timeLeft = (time.hours * 3600) + (time.minutes * 60) + time.seconds;
 
 const timeDisplay = document.getElementById("countdown");
+let isRunning = false;
 
 //Time Buttons functionality
 document.getElementById("15-seconds").addEventListener("click",() =>{
-  time.seconds += 15;
-  
-  calculateTime();
+  if (isRunning) {
+    //  add directly to remaining time
+    timeLeft += 15;
+  } else {
+    // modify base time normally
+    time.seconds += 15;
+    calculateTime();
+  }
+
   updateTimerDisplay();
   console.log(time);
   console.log(timeLeft);
 })
 
 document.getElementById("30-seconds").addEventListener("click",() =>{
-  time.seconds += 30;
-  
-  calculateTime();
+  if (isRunning) {
+    //  add directly to remaining time
+    timeLeft += 30;
+  } else {
+    // modify base time normally
+    time.seconds += 30;
+    calculateTime();
+  }
+
   updateTimerDisplay();
   console.log(time);
   console.log(timeLeft);
 })
 
 document.getElementById("1-minutes").addEventListener("click",() =>{
-  time.minutes += 1;
-  
-  calculateTime();
+    if (isRunning) {
+    timeLeft += 60; // for +1 minute
+  } else {
+    time.minutes += 1;
+    calculateTime();
+  }
+
   updateTimerDisplay();
   console.log(time);
   console.log(timeLeft);
 })
 
 document.getElementById("5-minutes").addEventListener("click",() =>{
-  time.minutes += 5;
-  
-  calculateTime();
+  if (isRunning) {
+    timeLeft += 5 * 60; // for +5 minute
+  } else {
+    time.minutes += 5;
+    calculateTime();
+  }
   updateTimerDisplay();
   console.log(time);
   console.log(timeLeft);
 })
 
 document.getElementById("15-minutes").addEventListener("click",() =>{
-  time.minutes += 15;
-  
-  calculateTime();
+  if (isRunning) {
+    timeLeft += 15 * 60; // for +15 minute
+  } else {
+    time.minutes += 15;
+    calculateTime();
+  }
   updateTimerDisplay();
   console.log(time);
   console.log(timeLeft);
 })
 
 document.getElementById("30-minutes").addEventListener("click",() =>{
-  time.minutes += 30;
-  
-  calculateTime();
+  if (isRunning) {
+    timeLeft += 30 * 60; // for +30 minute
+  } else {
+    time.minutes += 30;
+    calculateTime();
+  }
   updateTimerDisplay();
   console.log(time);
   console.log(timeLeft);
 })
 
+//Reset Button
 
-document.getElementById("reset-timer-btn").addEventListener("click", () => {
+document.getElementById("reset-btn").addEventListener("click", () => {
     time.hours = 0;
     time.minutes = 0;
     time.seconds = 0;
@@ -73,10 +100,17 @@ document.getElementById("reset-timer-btn").addEventListener("click", () => {
   timeLeft = (time.hours * 3600) + (time.minutes * 60) + time.seconds;
 
   updateTimerDisplay();
+  clearInterval(timerInterval);
   console.log(time);
   console.log(timeLeft);
 
-})
+});
+
+let timerInterval;
+//Start Timer functionality
+document.getElementById("start-btn").addEventListener("click", () => {
+  countDown();
+});
 
 
 //Functions
@@ -116,9 +150,18 @@ function calculateTime(){
   timeLeft = (time.hours * 3600) + (time.minutes * 60) + time.seconds
 }
 
+function countDown() {
+  // Prevent multiple countdowns at once
+  clearInterval(timerInterval);
+  isRunning = true;
 
-function countDown(){
-   if(timeLeft > 0) {
-     timeLeft--
-  } 
+  timerInterval = setInterval(() => {
+    if (timeLeft > 0) {
+      timeLeft--;           // subtract 1 second
+      updateTimerDisplay(); // refresh display
+    } else {
+      clearInterval(timerInterval); // stop when done
+      console.log("Time’s up!");
+    }
+  }, 1000);
 }
