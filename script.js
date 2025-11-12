@@ -64,7 +64,17 @@ document.getElementById("30-minutes").addEventListener("click",() =>{
   console.log(timeLeft);
 })
 
-document.getElementById("reset-timer btn").addEventListener("click",() =>{
+
+document.getElementById("reset-timer-btn").addEventListener("click", () => {
+    time.hours = 0;
+    time.minutes = 0;
+    time.seconds = 0;
+
+  timeLeft = (time.hours * 3600) + (time.minutes * 60) + time.seconds;
+
+  updateTimerDisplay();
+  console.log(time);
+  console.log(timeLeft);
 
 })
 
