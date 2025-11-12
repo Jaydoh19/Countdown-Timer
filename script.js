@@ -184,6 +184,7 @@ function countDown() {
       isRunning = false;
 
       document.getElementById("time-over").style.display = "block";
+      document.getElementById("reset-btn").textContent = "Reset"
     }
   }, 1000);
 }
