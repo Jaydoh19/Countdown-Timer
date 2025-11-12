@@ -15,8 +15,8 @@ body{
   min-height: 100vh;
 }
 
-.timer-text{
-  font-size: 4rem;
+.timer-text {
+  font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 600;
   color: white;
 }
@@ -25,30 +25,42 @@ span{
   font-family: "Poppins", sans-serif;
 }
 
-button{
+button {
   font-family: "Poppins", sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  font-weight: 600;
 }
 
-.timer-container{
+.timer-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 1rem;
   gap: 30px;
-  padding: 10px;
-  width: 50rem;
-  height: 25rem;
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
   background: linear-gradient(135deg, white, darkgray);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.time-intervals{
-  gap: 35px;
+.time-intervals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 500px;
 }
 
-.countdown{
-  font-size: 3rem;
+.countdown {
+  font-size: clamp(2rem, 8vw, 3rem);
   font-weight: 600;
 }
 
@@ -106,5 +118,27 @@ button{
   font-size: 3rem;
   font-weight: 600;
   color: black;
+}
+
+@media (max-width: 600px) {
+  .timer-container {
+    padding: 1rem;
+    gap: 20px;
+  }
+
+  .time-intervals {
+    gap: 10px;
+  }
+
+  .reset-btn, .start-btn {
+    width: 100%;
+  }
+
+  .timer-functions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
 }
 
