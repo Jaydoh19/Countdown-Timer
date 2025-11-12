@@ -9,7 +9,7 @@ timeLeft = (time.hours * 3600) + (time.minutes * 60) + time.seconds;
 
 const timeDisplay = document.getElementById("countdown");
 
-//Time Button functionality
+//Time Buttons functionality
 document.getElementById("15-seconds").addEventListener("click",() =>{
   time.seconds += 15;
   
@@ -18,6 +18,58 @@ document.getElementById("15-seconds").addEventListener("click",() =>{
   console.log(time);
   console.log(timeLeft);
 })
+
+document.getElementById("30-seconds").addEventListener("click",() =>{
+  time.seconds += 30;
+  
+  calculateTime();
+  updateTimerDisplay();
+  console.log(time);
+  console.log(timeLeft);
+})
+
+document.getElementById("1-minutes").addEventListener("click",() =>{
+  time.minutes += 1;
+  
+  calculateTime();
+  updateTimerDisplay();
+  console.log(time);
+  console.log(timeLeft);
+})
+
+document.getElementById("5-minutes").addEventListener("click",() =>{
+  time.minutes += 5;
+  
+  calculateTime();
+  updateTimerDisplay();
+  console.log(time);
+  console.log(timeLeft);
+})
+
+document.getElementById("15-minutes").addEventListener("click",() =>{
+  time.minutes += 15;
+  
+  calculateTime();
+  updateTimerDisplay();
+  console.log(time);
+  console.log(timeLeft);
+})
+
+document.getElementById("30-minutes").addEventListener("click",() =>{
+  time.minutes += 30;
+  
+  calculateTime();
+  updateTimerDisplay();
+  console.log(time);
+  console.log(timeLeft);
+})
+
+document.getElementById("reset-timer btn").addEventListener("click",() =>{
+
+})
+
+
+//Functions
 
 function updateTimerDisplay(){
   hours   = Math.floor(timeLeft / 3600)
