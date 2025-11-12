@@ -100,3 +100,11 @@ button{
 .interval:active, .interval-reset:active, .reset-btn:active, .start-btn:active{
   transform: scale(0.9);
 }
+
+.time-over{
+  display: none;
+  font-size: 3rem;
+  font-weight: 600;
+  color: black;
+}
+
