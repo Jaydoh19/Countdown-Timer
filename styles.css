@@ -1,3 +1,4 @@
+
 *{
   margin: 0;
   padding: 0;
@@ -12,6 +13,12 @@ body{
   flex-direction: column;
   background: linear-gradient(135deg,rgb(80, 80, 80),rgb(43, 43, 43));
   min-height: 100vh;
+}
+
+.timer-text{
+  font-size: 4rem;
+  font-weight: 600;
+  color: white;
 }
 
 span{
@@ -79,10 +86,12 @@ button{
   padding: 10px;
   background-color: rgb(197, 197, 197);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
 }
 
 .interval, .interval-reset, .reset-btn, .start-btn{
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .interval:hover, .interval-reset:hover, .reset-btn:hover, .start-btn:hover{
